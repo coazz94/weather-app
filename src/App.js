@@ -2,10 +2,11 @@ import { SearchBar } from "./components/Searchbar"
 import { Weather } from "./components/Weather"
 import { getCityInfo, getWeatherNow } from "./components/CityApi"
 import "./css/styles.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export function App() {
     const [weatherData, SetWeatherData] = useState({})
+    const [showCard, setShowCard] = useState(false)
 
     function getCity(city) {
         getCityInfo(city).then((data) => {
@@ -17,10 +18,17 @@ export function App() {
         })
     }
 
+    useEffect(() => {
+        if (JSON.stringify(weatherData) !== "{}") {
+            setShowCard((prevData) => true)
+            console.log(weatherData)
+        }
+    }, [weatherData])
+
     return (
         <>
             <SearchBar getCity={getCity} />
-            <Weather weatherData={weatherData} />
+            {showCard && <Weather weatherData={weatherData.data} />}
         </>
     )
 }
