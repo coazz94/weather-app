@@ -1,0 +1,48 @@
+.SearchSection {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+}
+
+.SearchBar {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    min-width: 40%;
+    padding: 60px;
+    border-radius: 2rem;
+}
+
+.InputBar {
+    font-size: 25px;
+    width: 20rem;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.btnSearch {
+    display: inline-block;
+    padding: 0.46em 1.6em;
+    border: 0.1em solid #000000;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #ffffff;
+    text-align: center;
+    transition: all 0.1s;
+}
+.btnSearch:hover {
+    text-shadow: 0 0 2em rgb(15, 15, 15);
+    color: #ffffff;
+    font-size: 1.3rem;
+    background-color: rgb(83, 233, 83);
+}
+
+@media all and (max-width: 30em) {
+    a.button5 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
