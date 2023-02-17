@@ -1,5 +1,6 @@
 import { SearchBar } from "./components/Searchbar"
 import { Weather } from "./components/Weather"
+import { Navigation } from "./components/Navigation"
 import { getCityInfo, getWeatherNow } from "./components/CityApi"
 import "./css/styles.css"
 import { useState, useEffect } from "react"

@@ -1,11 +1,12 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-family: "Noto Sans";
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans";
+    color: rgb(39, 36, 36);
 }
 
 body {
-  background-image: url("../data/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("../data/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
