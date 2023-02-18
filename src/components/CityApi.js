@@ -7,12 +7,6 @@ const createFourLink = (lat, lon) =>
     `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`
 // const createLongLink = (lat, lon) => `units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-function Cordinates(lon, lat, name) {
-    this.lon = lon
-    this.lat = lat
-    this.name = name
-}
-
 async function getWeatherNow(latitude, longitude, type) {
     let link = ""
 

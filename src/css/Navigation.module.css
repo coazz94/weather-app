@@ -1,6 +1,15 @@
-.NavElement {
-    position: absolute;
-    left: 95%;
-    top: 7%;
-    font-size: 25px;
+nav {
+    display: flex;
+    padding: 20px;
+    position: fixed;
+    top: 16px;
+    right: 25px;
+    gap: 30px;
+    font-size: 22px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+nav > * {
+    text-decoration: none;
+    font-weight: 400;
 }

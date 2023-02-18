@@ -5,7 +5,7 @@ export function SearchBar(props) {
     const [city, setCity] = useState("")
 
     function handleInput(event) {
-        setCity((prevData) => event.target.value)
+        setCity(() => event.target.value)
     }
 
     function handleEnter(event) {

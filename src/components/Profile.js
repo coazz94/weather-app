@@ -1,3 +1,7 @@
 export function Profile() {
-    return <h1>Test</h1>
+    return (
+        <>
+            <div>test</div>
+        </>
+    )
 }

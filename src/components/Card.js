@@ -9,7 +9,9 @@ export function Card(props) {
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
                 {props.name}
             </div>
-            <button className={styles.CardAdd}>Add</button>
+            <button className={styles.CardAdd} onClick={props.addToCity}>
+                Add
+            </button>
             <img
                 src={img}
                 alt="Icon not found"
@@ -21,11 +23,11 @@ export function Card(props) {
             </div>
             <div className={styles.CardInfo}>{props.description}</div>
             <div className={styles.CardHumidity}>
-                <i class="fa-solid fa-droplet"></i>
+                <i className="fa-solid fa-droplet"></i>
                 {props.humidity} %
             </div>
             <div className={styles.CardWind}>
-                <i class="fa-solid fa-wind"></i>
+                <i className="fa-solid fa-wind"></i>
                 {Math.floor(props.wind)}
                 <span>Km/h</span>
             </div>

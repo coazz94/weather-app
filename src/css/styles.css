@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
 * {
     padding: 0;
     margin: 0;
-    font-family: "Noto Sans";
+    font-family: "Fira Sans";
     color: rgb(39, 36, 36);
 }
 
