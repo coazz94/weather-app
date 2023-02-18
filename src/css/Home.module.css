@@ -12,3 +12,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.WeatherArea {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}

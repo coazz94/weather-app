@@ -1,7 +1,12 @@
+import { useLocation } from "react-router-dom"
 import styles from "../css/Card.module.css"
 
 export function Card(props) {
-    const img = require(`../data/${props.icon}.png`)
+    const location = useLocation()
+
+    console.log(location.pathname === "/Profile")
+
+    const img = props.icon && require(`../data/${props.icon}.png`)
 
     return (
         <div className={styles.CardBody}>
@@ -9,9 +14,15 @@ export function Card(props) {
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
                 {props.name}
             </div>
-            <button className={styles.CardAdd} onClick={props.addToCity}>
-                Add
-            </button>
+            {location.pathname === "/Profile" ? (
+                <button className={styles.CardAdd} onClick={props.deleteCity}>
+                    X
+                </button>
+            ) : (
+                <button className={styles.CardAdd} onClick={props.addToCity}>
+                    Add
+                </button>
+            )}
             <img
                 src={img}
                 alt="Icon not found"

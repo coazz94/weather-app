@@ -1,0 +1,10 @@
+section {
+    padding: 150px;
+}
+
+.test {
+    display: flex;
+    padding: 120px;
+    gap: 25px;
+    justify-content: center;
+}

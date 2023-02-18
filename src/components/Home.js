@@ -1,10 +1,11 @@
 import { SearchBar } from "./Searchbar"
 import { Weather } from "./Weather"
 import { getCityInfo, getWeatherNow } from "./CityApi"
-import "../css/styles.css"
+import "../css/Home.module.css"
+import styles from "../css/Home.module.css"
 import { useState, useEffect } from "react"
 
-export function Home(props) {
+export function Home() {
     const [weatherData, SetWeatherData] = useState({})
     const [showCard, setShowCard] = useState(false)
     const [userWeatherData, setUserWeatherData] = useState([])
@@ -40,14 +41,33 @@ export function Home(props) {
         }
     }, [weatherData])
 
+    useEffect(() => {
+        const localData = localStorage.getItem("userCities")
+
+        // If first load ever, create a local empty local Storage
+        localData === null && localStorage.setItem("userCities", "")
+
+        // If using activly site and adding something
+        if (userWeatherData.length > 0) {
+            localStorage.setItem("userCities", JSON.stringify(userWeatherData))
+        }
+
+        // first load and Data is in local Storage
+        if (localData.length > 0 && userWeatherData.length === 0) {
+            setUserWeatherData(() => JSON.parse(localData))
+        }
+    }, [userWeatherData])
+
     return (
         <>
-            <button onClick={() => console.log(userWeatherData)}>
-                lod State
-            </button>
             <SearchBar getCity={getCity} />
             {showCard && (
-                <Weather weatherData={weatherData.data} addToCity={addToCity} />
+                <section className={styles.WeatherArea}>
+                    <Weather
+                        weatherData={weatherData.data}
+                        addToCity={addToCity}
+                    />
+                </section>
             )}
         </>
     )
